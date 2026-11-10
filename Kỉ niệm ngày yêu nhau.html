@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kỉ niệm ngày yêu nhau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+<style id="css">
+:root{
+  --paper:#F7E9E4; --paper-2:#FBF1EE; --ink:#4A1424; --ink-soft:#7B4A55; --rose:#B85A66;
+  --sage:#7F8F78; --line:rgba(74,20,36,.16); --polaroid:#FFFDFB; --polaroid-ink:#3A1A22;
+  --empty:#EAD3CD; --band:#4A1424; --band-ink:#F7E3DF; --band-soft:rgba(247,227,223,.7);
+  --shadow:0 22px 44px -22px rgba(74,20,36,.45), 0 2px 6px rgba(74,20,36,.08);
+  --serif:"Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --hand:"Dancing Script", "Segoe Script", "Brush Script MT", cursive;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1C1014; --paper-2:#24151A; --ink:#F3DDD8; --ink-soft:#C8A6AC; --rose:#E59AA2;
+    --sage:#A9B8A0; --line:rgba(243,221,216,.15); --polaroid:#F4ECE7; --polaroid-ink:#3A1A22;
+    --empty:#3A252C; --band:#110A0C; --band-ink:#F3DDD8; --band-soft:rgba(243,221,216,.65);
+    --shadow:0 22px 44px -20px rgba(0,0,0,.7), 0 2px 6px rgba(0,0,0,.3);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1C1014; --paper-2:#24151A; --ink:#F3DDD8; --ink-soft:#C8A6AC; --rose:#E59AA2;
+  --sage:#A9B8A0; --line:rgba(243,221,216,.15); --polaroid:#F4ECE7; --polaroid-ink:#3A1A22;
+  --empty:#3A252C; --band:#110A0C; --band-ink:#F3DDD8; --band-soft:rgba(243,221,216,.65);
+  --shadow:0 22px 44px -20px rgba(0,0,0,.7), 0 2px 6px rgba(0,0,0,.3);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding-top:28px;gap:16px;flex-wrap:wrap}
+.mono{font-style:italic;font-size:26px;letter-spacing:.02em}
+.nav ul{display:flex;gap:clamp(14px,3vw,34px);list-style:none;margin:0;padding:0;font-size:18px}
+.nav a{text-decoration:none;color:var(--ink-soft)}
+.nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column}
+.hero-grid{flex:1;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:clamp(32px,6vw,80px);padding:48px 0 72px}
+.to{font-family:var(--hand);color:var(--rose);font-size:clamp(26px,3vw,34px);margin:0 0 8px}
+.names{font-weight:300;font-style:italic;font-size:clamp(68px,11.5vw,170px);line-height:.88;letter-spacing:-.02em;margin:0;word-break:break-word}
+.since{margin:36px 0 0;max-width:30ch;font-size:clamp(20px,2vw,24px);color:var(--ink-soft)}
+.count{display:block;color:var(--ink);font-size:clamp(28px,3.2vw,40px);line-height:1.25;margin:6px 0 4px}
+.count b{font-weight:500;font-variant-numeric:lining-nums tabular-nums}
+.since[hidden]{display:none}
+.hero-photo{position:relative;justify-self:center;width:min(100%,420px)}
+.hero-photo::before{content:"";position:absolute;inset:6% -4% -2% 6%;background:var(--polaroid);opacity:.55;transform:rotate(-7deg);box-shadow:var(--shadow);border-radius:3px}
+.hero-photo .polaroid{transform:rotate(3deg)}
+
+/* polaroid + slots */
+.polaroid{position:relative;background:var(--polaroid);padding:14px 14px 0;box-shadow:var(--shadow);border-radius:3px;margin:0}
+.polaroid figcaption{font-family:var(--hand);color:var(--polaroid-ink);font-size:clamp(22px,2.2vw,28px);text-align:center;padding:12px 6px 16px;line-height:1.2}
+.slot{position:relative;background:var(--empty);overflow:hidden;aspect-ratio:4/5;display:grid;place-items:center}
+.slot>img,.slot>video{width:100%;height:100%;object-fit:cover}
+.slot .ph{display:grid;justify-items:center;gap:6px;padding:16px;text-align:center;color:var(--ink-soft);font-size:15px;line-height:1.3}
+.polaroid .slot .ph{color:#8A5E66}
+.ph svg{width:30px;height:30px;opacity:.55}
+.ph .fname{font-family:var(--serif);letter-spacing:.02em}
+.pick{font:inherit;font-size:15px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;padding:4px 14px;cursor:pointer}
+.slot .swap{position:absolute;right:10px;bottom:10px;background:rgba(255,253,251,.92);color:#4A1424;border:0;font:inherit;font-size:14px;padding:4px 12px;border-radius:999px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+
+@media (prefers-reduced-motion:no-preference){
+  .develop .slot>img{animation:develop 2.2s .3s cubic-bezier(.3,.6,.2,1) both}
+  .develop{animation:drop 1s cubic-bezier(.2,.8,.2,1) both}
+}
+@keyframes develop{from{filter:brightness(1.9) saturate(0) contrast(.55) sepia(.3)}to{filter:none}}
+@keyframes drop{from{opacity:0;transform:rotate(9deg) translateY(-28px)}to{opacity:1;transform:rotate(3deg)}}
+
+/* section heads */
+section{padding:clamp(80px,11vw,140px) 0}
+.head{max-width:640px;margin:0 0 clamp(48px,7vw,88px)}
+.head h2{font-weight:400;font-size:clamp(42px,5.4vw,68px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em}
+.head p{margin:0;color:var(--ink-soft);font-size:21px;max-width:46ch}
+
+/* story */
+.chapter{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,88px);align-items:center;margin-bottom:clamp(72px,9vw,120px)}
+.chapter:last-child{margin-bottom:0}
+.chapter:nth-child(even){grid-template-columns:6fr 5fr}
+.chapter:nth-child(even) .chapter-photo{order:2}
+.chapter-photo{max-width:400px;width:100%;justify-self:center}
+.chapter:nth-child(odd) .chapter-photo .polaroid{transform:rotate(-2deg)}
+.chapter:nth-child(even) .chapter-photo .polaroid{transform:rotate(1.6deg)}
+.chapter-photo .polaroid{padding-bottom:14px}
+.step{font-family:var(--hand);color:var(--rose);font-size:28px;margin:0}
+.chapter h3{font-weight:500;font-size:clamp(34px,3.8vw,48px);line-height:1.08;margin:4px 0 16px}
+.chapter p{margin:0;max-width:40ch;color:var(--ink-soft);font-size:22px;line-height:1.7}
+
+/* films */
+.films{background:var(--band);color:var(--band-ink)}
+.films .head p{color:var(--band-soft)}
+.reels{display:flex;gap:clamp(24px,5vw,64px);justify-content:center;flex-wrap:wrap}
+.reel{margin:0;width:min(100%,320px)}
+.reel .slot{aspect-ratio:9/16;border-radius:30px;background:rgba(247,227,223,.08);border:1px solid rgba(247,227,223,.18);color:var(--band-soft)}
+.reel .slot .ph{color:var(--band-soft)}
+.reel .slot>video{background:#000}
+.reel figcaption{font-family:var(--hand);font-size:26px;text-align:center;margin-top:16px;color:var(--band-ink)}
+
+/* photo table */
+.table{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px) clamp(20px,3vw,40px);padding:12px 0}
+.table .polaroid{transform:rotate(var(--r,0deg)) translateY(var(--y,0));cursor:zoom-in;transition:transform .25s ease}
+.table .polaroid:has(.slot.is-empty){cursor:default}
+.table .polaroid .slot{aspect-ratio:1/1.1}
+.table .polaroid:nth-child(1){--r:-3deg;--y:8px}
+.table .polaroid:nth-child(2){--r:2deg;--y:-14px}
+.table .polaroid:nth-child(3){--r:-1.5deg;--y:20px}
+.table .polaroid:nth-child(4){--r:2.5deg;--y:-6px}
+.table .polaroid:nth-child(5){--r:-2deg;--y:12px}
+.table .polaroid:nth-child(6){--r:1.2deg;--y:-10px}
+.table .polaroid:focus-visible{transform:rotate(0) scale(1.02)}
+
+/* letter */
+.letter-sec{background:var(--paper-2)}
+.letter{max-width:700px;margin:0 auto;background:var(--polaroid);color:var(--polaroid-ink);box-shadow:var(--shadow);border-radius:4px;
+  padding:clamp(32px,6vw,72px) clamp(24px,6vw,76px);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 37px,rgba(184,90,102,.14) 37px,rgba(184,90,102,.14) 38px);
+  background-position:0 clamp(32px,6vw,72px)}
+.salute{font-family:var(--hand);font-size:clamp(36px,4vw,46px);margin:0 0 20px;line-height:1.1}
+.letter-body p{margin:0 0 1em;font-size:22px;line-height:1.72}
+.sign{font-family:var(--hand);font-size:32px;text-align:right;margin:28px 0 0;line-height:1.2;white-space:pre-line}
+
+footer{padding:64px 0 calc(64px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--ink-soft)}
+footer .mono{display:block;font-size:40px;color:var(--ink);margin-bottom:6px}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92svh;overflow:visible}
+dialog.lb::backdrop{background:rgba(20,8,12,.82)}
+dialog.lb .polaroid{transform:none;max-height:92svh;display:flex;flex-direction:column}
+dialog.lb img{max-height:calc(92svh - 110px);width:auto;margin:0 auto;object-fit:contain}
+dialog.lb .close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--polaroid);color:var(--polaroid-ink);font-size:22px;cursor:pointer;box-shadow:var(--shadow)}
+
+/* editor bar */
+.editbar{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end;
+  background:var(--polaroid);color:var(--polaroid-ink);padding:10px 12px;border-radius:18px;box-shadow:var(--shadow);max-width:calc(100vw - 32px);font-size:16px}
+.editbar[hidden]{display:none}
+.editbar button,.editbar label.btn{font:inherit;font-size:16px;border:1px solid rgba(74,20,36,.35);background:transparent;color:inherit;border-radius:999px;padding:6px 14px;cursor:pointer;line-height:1.3}
+.editbar .primary{background:#4A1424;color:#F7E3DF;border-color:#4A1424}
+.editbar input[type=date]{font:inherit;font-size:16px;border:1px solid rgba(74,20,36,.35);border-radius:10px;padding:4px 8px;background:#fff;color:#3A1A22}
+.editbar .status{flex-basis:100%;text-align:right;font-size:14px;opacity:.8;min-height:0}
+.editbar .status:empty{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body.editing [data-field]{outline:1px dashed var(--rose);outline-offset:6px;border-radius:4px}
+body:not(.editing) .edit-only{display:none}
+body:not(.is-editor) .owner-hint{display:none}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;padding-top:32px}
+  .hero-photo{width:min(86%,360px)}
+  .chapter,.chapter:nth-child(even){grid-template-columns:1fr}
+  .chapter:nth-child(even) .chapter-photo{order:0}
+  .chapter-photo{max-width:340px}
+  .table{grid-template-columns:repeat(2,1fr)}
+  .nav ul{display:none}
+}
+@media (max-width:480px){
+  body{font-size:19px}
+  .table{grid-template-columns:1fr 1fr;gap:22px 14px}
+  .polaroid figcaption{font-size:20px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<template id="tpl">
+<header class="hero" id="top">
+  <div class="wrap nav">
+    <span class="mono" data-names-short>A &amp; E</span>
+    <ul>
+      <li><a href="#chuyen">Câu chuyện</a></li>
+      <li><a href="#phim">Thước phim</a></li>
+      <li><a href="#anh">Bàn ảnh</a></li>
+      <li><a href="#thu">Lá thư</a></li>
+    </ul>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="to">gửi người mình thương,</p>
+      <h1 class="names" data-field="names"></h1>
+      <p class="since" id="since">
+        Chúng mình đã thương nhau được
+        <span class="count" id="count" aria-live="off"></span>
+        <span id="sinceDate"></span>
+      </p>
+      <p class="since owner-hint" id="noDate">Chọn ngày bắt đầu yêu nhau ở thanh chỉnh sửa để bộ đếm chạy.</p>
+    </div>
+    <div class="hero-photo">
+      <figure class="polaroid develop">
+        <div class="slot" data-slot="hero"></div>
+        <figcaption>ngày ấy, chúng mình</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="chuyen">
+    <div class="wrap">
+      <div class="head">
+        <h2>Câu chuyện của chúng mình</h2>
+        <p>Bốn chương nhỏ, kể lại những ngày chúng mình đã đi cùng nhau.</p>
+      </div>
+      <div class="chapters">
+        <article class="chapter">
+          <div class="chapter-photo"><figure class="polaroid"><div class="slot" data-slot="ch1"></div></figure></div>
+          <div><p class="step">Chương một</p><h3>Những bữa ăn có nhau</h3>
+          <p>Mỗi người một món, mỗi người một khẩu vị, nhưng bàn ăn thì luôn chung một đôi. Món gì cũng ngon hơn hẳn khi có em ngồi đối diện.</p></div>
+        </article>
+        <article class="chapter">
+          <div class="chapter-photo"><figure class="polaroid"><div class="slot" data-slot="ch2"></div></figure></div>
+          <div><p class="step">Chương hai</p><h3>Kỉ niệm một năm</h3>
+          <p>Chiếc bánh bé xíu với một quả dâu và chiếc nơ tím, mà chứa trọn một năm thương nhau. Điều ước hôm ấy rất đơn giản: năm sau, năm sau nữa, mình vẫn cùng nhau thổi nến.</p></div>
+        </article>
+        <article class="chapter">
+          <div class="chapter-photo"><figure class="polaroid"><div class="slot" data-slot="ch3"></div></figure></div>
+          <div><p class="step">Chương ba</p><h3>Những nơi đã đi cùng nhau</h3>
+          <p>Đi đâu không quan trọng lắm. Quan trọng là lúc nào quay sang cũng thấy có nhau.</p></div>
+        </article>
+        <article class="chapter">
+          <div class="chapter-photo"><figure class="polaroid"><div class="slot" data-slot="ch4"></div></figure></div>
+          <div><p class="step">Chương bốn</p><h3>Và hôm nay</h3>
+          <p>Vẫn là chúng mình, chỉ là thương nhau nhiều hơn hôm qua một chút — và ít hơn ngày mai một chút.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="films" id="phim">
+    <div class="wrap">
+      <div class="head">
+        <h2>Những thước phim</h2>
+        <p>Vài giây ngắn ngủi thôi, nhưng xem lại lần nào cũng thấy thương.</p>
+      </div>
+      <div class="reels">
+        <figure class="reel"><div class="slot" data-slot="v1"></div><figcaption>đoạn phim thứ nhất</figcaption></figure>
+        <figure class="reel"><div class="slot" data-slot="v2"></div><figcaption>đoạn phim thứ hai</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="anh">
+    <div class="wrap">
+      <div class="head">
+        <h2>Bàn ảnh nhỏ</h2>
+        <p>Những tấm ảnh rải trên bàn, mỗi tấm là một lần mình muốn giữ lại khoảnh khắc ấy mãi.</p>
+      </div>
+      <div class="table">
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g1"></div><figcaption>nụ cười của em</figcaption></figure>
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g2"></div><figcaption>một ngày nắng đẹp</figcaption></figure>
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g3"></div><figcaption>chỉ cần có nhau</figcaption></figure>
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g4"></div><figcaption>bình yên là đây</figcaption></figure>
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g5"></div><figcaption>mãi thế này nhé</figcaption></figure>
+        <figure class="polaroid" tabindex="0"><div class="slot" data-slot="g6"></div><figcaption>của nhau</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="letter-sec" id="thu">
+    <div class="wrap">
+      <article class="letter">
+        <p class="salute" data-field="salute"></p>
+        <div class="letter-body" data-field="letter"></div>
+        <p class="sign" data-field="sign"></p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="mono" data-names-full></span>
+  Trang này được làm riêng cho hai đứa mình.
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Xem ảnh">
+  <figure class="polaroid"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="close" id="lbClose" aria-label="Đóng">×</button>
+</dialog>
+
+<div class="editbar" id="editbar" hidden>
+  <label class="btn primary" for="bulk">Thêm ảnh &amp; video</label>
+  <input class="sr" type="file" id="bulk" multiple accept="image/*,video/mp4,video/webm,.heic,.heif">
+  <button type="button" id="editToggle">Chỉnh sửa chữ</button>
+  <label class="edit-only">Ngày bắt đầu <input type="date" id="startInput"></label>
+  <button type="button" class="edit-only primary" id="saveBtn">Lưu thay đổi</button>
+  <span class="status" id="status" role="status"></span>
+</div>
+<input class="sr" type="file" id="single" accept="image/*,video/mp4,video/webm,.heic,.heif" tabindex="-1" aria-hidden="true">
+</template>
+
+<script type="application/json" id="state">{"settings":{},"slots":{}}</script>
+<script id="app-src">
+(function(){
+"use strict";
+var HEAD = '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<title>Kỉ niệm ngày yêu nhau</title>\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">\n';
+var LOCAL_DIR = 'Celebrate/';
+var SLOTS = {
+  hero:{file:'IMG_1002.JPG',kind:'image'},
+  ch1:{file:'IMG_0890.jpg',kind:'image'}, ch2:{file:'IMG_0892.jpg',kind:'image'},
+  ch3:{file:'IMG_0997.JPG',kind:'image'}, ch4:{file:'IMG_0998.JPG',kind:'image'},
+  v1:{file:'1K1HBAUPG_8R96SK.mp4',kind:'video'}, v2:{file:'1K5D1M0FM_8R96SK.mp4',kind:'video'},
+  g1:{file:'IMG_0999.JPG',kind:'image'}, g2:{file:'IMG_1001.JPG',kind:'image'}, g3:{file:'IMG_1003.JPG',kind:'image'},
+  g4:{file:'IMG_1004.JPG',kind:'image'}, g5:{file:'IMG_1005.JPG',kind:'image'}, g6:{file:'IMG_1006.JPG',kind:'image'}
+};
+var DEFAULTS = {
+  names:'Anh & Em', start:'', salute:'Gửi em,', sign:'Thương em,\nAnh',
+  letter:'Cảm ơn em đã đến, và đã ở lại.\n\nCảm ơn những ngày bình thường hóa thành kỷ niệm, những lần giận rồi lại thương, những bữa cơm giản dị mà ấm áp lạ thường.\n\nAnh không hứa điều gì quá xa xôi. Anh chỉ hứa sẽ luôn nắm tay em thật chặt — hôm nay, ngày mai, và cả những ngày sau nữa.'
+};
+var CAM = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.6l1.2-1.8A1.5 1.5 0 0 1 9.55 3.5h4.9a1.5 1.5 0 0 1 1.25.7L16.9 6h1.6A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-9Z" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="13" r="3.6" stroke="currentColor" stroke-width="1.3"/></svg>';
+var PLAY = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.2"/><path d="M10 8.2v7.6l6-3.8-6-3.8Z" fill="currentColor"/></svg>';
+var HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.2 0 3.6 1.2 5.3 3.2 1.7-2 3.1-3.2 5.3-3.2 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21Z" fill="currentColor"/></svg>';
+
+var tplEl = document.getElementById('tpl');
+var TPL = tplEl.innerHTML;
+var CSS = document.getElementById('css').textContent;
+var SRC = document.getElementById('app-src').textContent;
+var state;
+try { state = JSON.parse(document.getElementById('state').textContent) || {}; } catch(e){ state = {}; }
+state.settings = Object.assign({}, DEFAULTS, state.settings || {});
+state.slots = state.slots || {};
+
+var app = document.getElementById('app');
+app.appendChild(tplEl.content.cloneNode(true));
+var $ = function(id){ return document.getElementById(id); };
+var assets = null, artifact = null, isEditor = false, editing = false, busy = false, pendingSlot = null;
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+function renderText(){
+  var s = state.settings;
+  document.querySelector('[data-field="names"]').textContent = s.names;
+  document.querySelector('[data-names-full]').textContent = s.names;
+  var parts = s.names.split('&').map(function(x){ return x.trim(); }).filter(Boolean);
+  document.querySelector('[data-names-short]').textContent = parts.length === 2 ? parts[0].charAt(0) + ' & ' + parts[1].charAt(0) : s.names;
+  document.title = 'Kỉ niệm ngày yêu nhau · ' + s.names;
+  document.querySelector('[data-field="salute"]').textContent = s.salute;
+  document.querySelector('[data-field="sign"]').textContent = s.sign;
+  var body = document.querySelector('[data-field="letter"]');
+  body.innerHTML = s.letter.split(/\n\s*\n/).map(function(p){ return '<p>' + esc(p.trim()) + '</p>'; }).join('');
+  renderCount();
+}
+
+function parseStart(){
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(state.settings.start || '');
+  return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
+}
+function renderCount(){
+  var d = parseStart(), since = $('since'), noDate = $('noDate');
+  if (!d){ since.hidden = true; noDate.hidden = false; return; }
+  since.hidden = false; noDate.hidden = true;
+  var ms = Math.max(0, Date.now() - d.getTime());
+  var mins = Math.floor(ms / 60000), days = Math.floor(mins / 1440), hrs = Math.floor((mins % 1440) / 60), mm = mins % 60;
+  $('count').innerHTML = '<b>' + days.toLocaleString('vi-VN') + '</b> ngày, <b>' + hrs + '</b> giờ và <b>' + mm + '</b> phút';
+  $('sinceDate').textContent = 'kể từ ngày ' + d.getDate() + ' tháng ' + (d.getMonth()+1) + ' năm ' + d.getFullYear() + '.';
+}
+
+function showPlaceholder(el, def){
+  var key = el.getAttribute('data-slot');
+  el.innerHTML = '';
+  el.classList.add('is-empty');
+  var ph = document.createElement('div'); ph.className = 'ph';
+  if (isEditor){
+    ph.innerHTML = (def.kind === 'video' ? PLAY : CAM) + '<span class="fname">' + esc(def.file) + '</span>';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'pick';
+    b.textContent = def.kind === 'video' ? 'Chọn video' : 'Chọn ảnh';
+    b.addEventListener('click', function(ev){ ev.stopPropagation(); pickFor(key); });
+    ph.appendChild(b);
+  } else {
+    ph.innerHTML = def.kind === 'video' ? PLAY : HEART;
+  }
+  el.appendChild(ph);
+}
+function renderSlot(el){
+  var key = el.getAttribute('data-slot'), def = SLOTS[key], v = state.slots[key];
+  el.innerHTML = '';
+  el.classList.remove('is-empty');
+  // Ưu tiên file đã tải lên qua trình chỉnh sửa; nếu không có thì dùng file thật trong thư mục Celebrate/
+  var src = (v && v.id) ? '/_blob/' + v.id : LOCAL_DIR + encodeURIComponent(def.file);
+  if (def.kind === 'video'){
+    var vid = document.createElement('video');
+    vid.src = src; vid.controls = true; vid.playsInline = true; vid.preload = 'metadata';
+    vid.addEventListener('error', function(){ showPlaceholder(el, def); });
+    el.appendChild(vid);
+  } else {
+    var img = document.createElement('img');
+    img.src = src; img.alt = ''; img.loading = key === 'hero' ? 'eager' : 'lazy'; img.decoding = 'async';
+    img.onerror = function(){ showPlaceholder(el, def); };
+    el.appendChild(img);
+  }
+  if (isEditor){
+    var sw = document.createElement('button'); sw.type = 'button'; sw.className = 'swap'; sw.textContent = 'Đổi';
+    sw.addEventListener('click', function(ev){ ev.stopPropagation(); pickFor(key); });
+    el.appendChild(sw);
+  }
+}
+function renderSlots(){ document.querySelectorAll('[data-slot]').forEach(renderSlot); }
+
+/* lightbox */
+var lb = $('lb');
+document.querySelectorAll('.table .polaroid').forEach(function(fig){
+  function open(){
+    var img = fig.querySelector('.slot > img'); if (!img) return;
+    $('lbImg').src = img.src; $('lbCap').textContent = fig.querySelector('figcaption').textContent;
+    if (lb.showModal) lb.showModal();
+  }
+  fig.addEventListener('click', open);
+  fig.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+});
+$('lbClose').addEventListener('click', function(){ lb.close(); });
+lb.addEventListener('click', function(e){ if (e.target === lb) lb.close(); });
+
+/* publishing */
+function buildDoc(){
+  var json = JSON.stringify(state).replace(/</g, '\\u003c');
+  return '<!doctype html>\n<html lang="vi">\n<head>\n' + HEAD + '<style id="css">' + CSS + '</style>\n</head>\n<body>\n<div id="app"></div>\n\n<template id="tpl">' + TPL + '</template>\n\n<script type="application/json" id="state">' + json + '<\/script>\n<script id="app-src">' + SRC + '<\/script>\n</body>\n</html>\n';
+}
+function status(t){ $('status').textContent = t || ''; }
+async function save(){
+  if (!artifact){ status('Không lưu được ở chế độ xem này.'); return false; }
+  status('Đang lưu…');
+  try { await artifact.publish(buildDoc()); status('Đã lưu.'); return true; }
+  catch(e){
+    var c = e && e.code;
+    if (c === 'conflict') status('Trang vừa được cập nhật ở nơi khác, đang tải lại.');
+    else if (c === 'not_granted' || c === 'not_writer') status('Bạn không có quyền chỉnh trang này.');
+    else status('Chưa lưu được (' + (c || 'lỗi') + '). Thử lại sau ít phút.');
+    return false;
+  }
+}
+
+/* uploads */
+var heicLoader = null;
+function loadHeic(){
+  if (window.heic2any) return Promise.resolve(window.heic2any);
+  if (!heicLoader) heicLoader = new Promise(function(res, rej){
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js';
+    s.onload = function(){ window.heic2any ? res(window.heic2any) : rej(new Error('heic')); };
+    s.onerror = function(){ heicLoader = null; rej(new Error('heic')); };
+    document.head.appendChild(s);
+  });
+  return heicLoader;
+}
+function ext(name){ var m = /\.([^.]+)$/.exec(name || ''); return m ? m[1].toLowerCase() : ''; }
+function base(name){ return String(name || '').replace(/\.[^.]+$/, '').toLowerCase().trim(); }
+function kindOf(f){
+  var e = ext(f.name), t = f.type || '';
+  if (t.indexOf('video/') === 0 || e === 'mp4' || e === 'webm' || e === 'mov') return 'video';
+  return 'image';
+}
+async function prepare(f){
+  var e = ext(f.name);
+  if (e === 'heic' || e === 'heif' || /heic|heif/.test(f.type)){
+    var conv = await loadHeic();
+    var out = await conv({ blob: f, toType: 'image/jpeg', quality: 0.9 });
+    return { blob: Array.isArray(out) ? out[0] : out, type: 'image/jpeg' };
+  }
+  if (e === 'mov' || f.type === 'video/quicktime') throw { code: 'mov' };
+  var map = { jpg:'image/jpeg', jpeg:'image/jpeg', png:'image/png', webp:'image/webp', gif:'image/gif', mp4:'video/mp4', webm:'video/webm' };
+  var type = map[e] || f.type;
+  return { blob: f, type: type };
+}
+async function uploadOne(f){
+  var p = await prepare(f);
+  var r = await assets.upload(p.blob, { type: p.type });
+  return r.id;
+}
+function errText(e){
+  var c = e && e.code;
+  if (c === 'mov') return 'video .mov chưa hỗ trợ, hãy dùng .mp4';
+  if (c === 'too_large') return 'file lớn hơn 20 MB';
+  if (c === 'unsupported_type') return 'định dạng chưa hỗ trợ';
+  if (c === 'quota_or_state') return 'hết dung lượng lưu trữ';
+  if (c === 'rate_limited') return 'tải hơi nhanh, đợi chút rồi thử lại';
+  return 'không tải được';
+}
+async function handleFiles(files, forcedKey){
+  if (busy || !files.length) return;
+  busy = true;
+  var plan = [], used = {};
+  if (forcedKey){ plan.push({ file: files[0], key: forcedKey }); }
+  else {
+    var byBase = {};
+    Object.keys(SLOTS).forEach(function(k){ byBase[base(SLOTS[k].file)] = k; });
+    var rest = [];
+    files.forEach(function(f){
+      var k = byBase[base(f.name)];
+      if (k && !used[k]){ used[k] = 1; plan.push({ file: f, key: k }); } else rest.push(f);
+    });
+    rest.forEach(function(f){
+      var kind = kindOf(f);
+      var k = Object.keys(SLOTS).find(function(k){ return !used[k] && SLOTS[k].kind === kind && !(state.slots[k] && state.slots[k].id); });
+      if (k){ used[k] = 1; plan.push({ file: f, key: k }); }
+    });
+  }
+  if (!plan.length){ status('Không còn khung trống cho các file này. Dùng nút “Đổi” trên từng ảnh để thay.'); busy = false; return; }
+  var ok = 0, fails = [];
+  for (var i = 0; i < plan.length; i++){
+    status('Đang tải ' + (i+1) + '/' + plan.length + ': ' + plan[i].file.name);
+    try {
+      var id = await uploadOne(plan[i].file);
+      state.slots[plan[i].key] = { id: id };
+      ok++;
+      document.querySelectorAll('[data-slot="' + plan[i].key + '"]').forEach(renderSlot);
+    } catch(e){ fails.push(plan[i].file.name + ' (' + errText(e) + ')'); }
+  }
+  busy = false;
+  if (ok){ var saved = await save(); if (saved && fails.length) status('Đã lưu ' + ok + ' file. Lỗi: ' + fails.join(', ')); }
+  else status('Chưa tải được: ' + fails.join(', '));
+}
+function pickFor(key){ pendingSlot = key; var s = $('single'); s.accept = SLOTS[key].kind === 'video' ? 'video/mp4,video/webm' : 'image/*,.heic,.heif'; s.value = ''; s.click(); }
+$('single').addEventListener('change', function(e){ var f = Array.prototype.slice.call(e.target.files || []); if (f.length && pendingSlot) handleFiles(f, pendingSlot); pendingSlot = null; });
+$('bulk').addEventListener('change', function(e){ var f = Array.prototype.slice.call(e.target.files || []); e.target.value = ''; handleFiles(f); });
+
+/* text editing */
+function setEditing(on){
+  editing = on;
+  document.body.classList.toggle('editing', on);
+  document.querySelectorAll('[data-field]').forEach(function(el){
+    if (on){ el.setAttribute('contenteditable', 'true'); el.setAttribute('spellcheck', 'false'); }
+    else el.removeAttribute('contenteditable');
+  });
+  $('editToggle').textContent = on ? 'Thôi, không sửa' : 'Chỉnh sửa chữ';
+  $('startInput').value = state.settings.start || '';
+  if (!on) renderText();
+}
+$('editToggle').addEventListener('click', function(){ setEditing(!editing); });
+$('saveBtn').addEventListener('click', async function(){
+  var s = state.settings;
+  var g = function(f){ return document.querySelector('[data-field="' + f + '"]').innerText.replace(/\u00a0/g, ' ').trim(); };
+  s.names = g('names') || DEFAULTS.names;
+  s.salute = g('salute') || DEFAULTS.salute;
+  s.sign = g('sign') || DEFAULTS.sign;
+  s.letter = (g('letter') || DEFAULTS.letter).replace(/\n{3,}/g, '\n\n');
+  s.start = $('startInput').value || '';
+  setEditing(false);
+  await save();
+});
+
+renderText();
+renderSlots();
+setInterval(renderCount, 30000);
+
+/* capabilities */
+(async function(){
+  if (!window.claude || typeof window.claude.use !== 'function') return;
+  try {
+    var res = await Promise.all([window.claude.use('assets'), window.claude.use('artifact')]);
+    assets = res[0]; artifact = res[1];
+  } catch(e){ return; }
+  if (assets && artifact){
+    isEditor = true;
+    document.body.classList.add('is-editor');
+    $('editbar').hidden = false;
+    renderSlots();
+    var empty = Object.keys(SLOTS).filter(function(k){ return !(state.slots[k] && state.slots[k].id); }).length;
+    if (empty === Object.keys(SLOTS).length) status('Chọn tất cả ảnh và video trong folder, trang sẽ tự xếp vào đúng khung.');
+  }
+})();
+})();
+</script>
+</body>
+</html>
